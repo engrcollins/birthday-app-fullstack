@@ -5,9 +5,8 @@ const mongoose = require('mongoose')
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require("cors");
-//const MONGODB_URI = `mongodb://mccollins:Passion007!@first-cluster-shard-00-00.xpqes.mongodb.net:27017/mern-example`;
-var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:8000', 'https://birthday-app-fullstack.herokuapp.com/'];
+/*const cors = require("cors");
+var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:8000', 'https://birthday-app-fullstack.herokuapp.com'];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -17,6 +16,7 @@ var corsOptions = {
     }
   }
 }
+*/
 // importing files
 const routes = require('./routes/birthday-wishes');
 
@@ -37,7 +37,7 @@ connection.once('open', () => {
 })
 
 // Configuration
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 const wishRouter = require('./routes/birthday-wishes')
