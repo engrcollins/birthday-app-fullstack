@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require("cors");
 //const MONGODB_URI = `mongodb://mccollins:Passion007!@first-cluster-shard-00-00.xpqes.mongodb.net:27017/mern-example`;
-var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:8000'];
+var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:8000', 'https://birthday-app-fullstack.herokuapp.com/'];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
