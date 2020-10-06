@@ -1,7 +1,7 @@
 
 // mongodb://heroku_4fq4bdzw:uqnauelbvlc8g2nt1njaqjqe6j@ds043027.mlab.com:43027/heroku_4fq4bdzw 
 //Importing Modules
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
