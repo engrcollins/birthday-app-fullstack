@@ -58,8 +58,8 @@ function App() {
           <AnchorLink href='#section1'>
             {  console.log(list[index])}
               <p className="list-group-item">{list[index]['name']}</p>
-              <p>{list[index]['company']}</p>
-              <p>{list[index]['position']}</p>
+              <p>{list[index]['msgContent']}</p>
+              <p>{list[index]['msgTitle']}</p>
               <Divider />
             </AnchorLink>
       </ListItem>

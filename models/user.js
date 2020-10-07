@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    position: String,
+    msgTitle: String,
     name: String,
-    company: String,
+    msgContent: String,
     date: Date
 });
 

@@ -10,12 +10,12 @@ router.post('/add', async (req, res) => {
             statusCode: 403
         });
     }
-    const { name, position, company } = req.body;
+    const { name, msgTitle, msgContent } = req.body;
 
     const newUser = new User({
-        position,
+        msgTitle,
         name,
-        company,
+        msgContent,
         date: Date.now()
     });
     try {
@@ -24,8 +24,8 @@ router.post('/add', async (req, res) => {
             message: 'Data successfully saved',
             statusCode: 200,
             name,
-            position,
-            company
+            msgTitle,
+            msgContent
         });
     } catch (error) {
         console.log('Error: ', error);

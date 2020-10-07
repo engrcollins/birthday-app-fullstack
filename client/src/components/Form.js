@@ -5,8 +5,8 @@ import axios from 'axios';
 const Form = (props) => {
   const initialUser = {
     name: '',
-    position: '',
-    company: ''
+    msgTitle: '',
+    msgContent: ''
   };
 
   const [user, setUser] = useState(initialUser);
@@ -17,20 +17,20 @@ const Form = (props) => {
 
   const saveWishes = (e) => {
     e.preventDefault();
-    const { name, position, company } = user;
+    const { name, msgTitle, msgContent } = user;
     axios({
       url: 'https://birthday-app-fullstack.herokuapp.com/birthday-wishes/add',
       method: 'POST',
       data: {
         name,
-        position,
-        company
+        msgTitle,
+        msgContent
       }
     })
       .then((response) => {
         let note = document.getElementById('formSubmit');
         setUser(initialUser);
-        note.innerHTML = 'Message submitted. Thank you! 💖'
+        note.innerHTML = 'Message submitted successfully. Thank you! 💖'
         props.fetchUsers();
       })
       .catch(() => alert('Failed uploading data'))
@@ -47,20 +47,21 @@ const Form = (props) => {
         />
 
         <TextField
-          name="company"
-          value={user.company}
+          name="msgTitle"
+          value={user.msgTitle}
           id="standard-dense"
           onChange={handleChange}
-          label="Company"
+          label="Message Title"
+        />
+        
+        <TextField
+          name="msgContent"
+          value={user.msgContent}
+          id="standard-dense"
+          onChange={handleChange}
+          label="Message Content"
         />
 
-        <TextField
-          name="position"
-          value={user.position}
-          id="standard-dense"
-          onChange={handleChange}
-          label="Position"
-        />
         <p id='formSubmit'></p>
         <Button variant="contained" color="primary" onClick={saveWishes}> Submit </Button>
 

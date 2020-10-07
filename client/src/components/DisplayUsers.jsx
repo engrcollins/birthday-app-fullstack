@@ -20,10 +20,10 @@ const DisplayUser = (props) =>{
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {users.map(({ name, position, company }, key) => (
+                        {users.map(({ name, position, msgContent }, key) => (
                             <TableRow key={key}>
                                 <TableCell component="th" scope="row"> {name ? name : 'No Name Found'} </TableCell>
-                                <TableCell align="right">{company ? company : 'No Company Found'}</TableCell>
+                                <TableCell align="right">{msgContent ? msgContent : 'No Company Found'}</TableCell>
                                 <TableCell align="right">{position ? position : 'No Position Found'}</TableCell>
                             </TableRow>
                         ))}

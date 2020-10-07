@@ -11,12 +11,12 @@ router.post('/add', async (req, res) => {
             statusCode: 403
         });
     }
-    const { name, position, company } = req.body;
+    const { name, position, msgContent } = req.body;
 
     const newUser = new User({
         position,
         name,
-        company,
+        msgContent,
         date: Date.now()
     });
     try {
@@ -26,7 +26,7 @@ router.post('/add', async (req, res) => {
             statusCode: 200,
             name,
             position,
-            company
+            msgContent
         });
     } catch (error) {
         console.log('Error: ', error);
