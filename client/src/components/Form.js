@@ -19,7 +19,7 @@ const Form = (props) => {
     e.preventDefault();
     const { name, msgTitle, msgContent } = user;
     axios({
-      url: 'https://birthday-app-fullstack.herokuapp.com/birthday-wishes/add',
+      url: '/birthday-wishes/add',
       method: 'POST',
       data: {
         name,

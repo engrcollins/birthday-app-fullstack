@@ -27,7 +27,7 @@ function App() {
 
   const fetchUsers = () => {
     setIsLoading(true);
-    axios.get('https://birthday-app-fullstack.herokuapp.com/birthday-wishes')
+    axios.get('/birthday-wishes')
       .then((response) => {
         let data = response.data;
         setUsers(response.data)
