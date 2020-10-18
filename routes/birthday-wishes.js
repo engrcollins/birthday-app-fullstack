@@ -18,6 +18,7 @@ router.post('/add', async (req, res) => {
         msgContent,
         date: Date.now()
     });
+    console.log(newUser)
     try {
         await newUser.save();
         res.json({
@@ -36,7 +37,6 @@ router.post('/add', async (req, res) => {
     }
 });
 
-
 router.get('/', async (req, res) => {
     try {
         const users = await User.find({});
@@ -50,6 +50,30 @@ router.get('/', async (req, res) => {
         });
     }
        
+});
+
+router.post('/delete', async (req, res) => {
+    if (isEmpty(req.body)) {
+        return res.status(403).json({
+            message: 'Body should not be empty',
+            statusCode: 403
+        });
+    }
+    const { messageId } = req.body;
+    try {
+        await User.deleteOne({_id:messageId});
+        res.json({
+            message: 'Data successfully deleted',
+            statusCode: 200
+        });
+        console.log('deleted')
+    } catch (error) {
+        console.log('Error: ', error);
+        res.status(500).json({
+            message: 'Internal Server error',
+            statusCode: 500
+        });
+    }
 });
 
 module.exports = router;

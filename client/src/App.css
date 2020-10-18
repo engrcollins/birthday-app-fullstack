@@ -1,24 +1,118 @@
-
-.form, .users {
-  margin: 0px auto;
-  width: 50%;
-}
-
-.form {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-}
-
-.form > div {
-  margin-top: 10px;
-}
-.form button {
-  margin-top: 20px;
-  width: 100px;
-}
-
-#formSubmit{
-  color: rgb(18, 221, 18);
-}
+*{
+  /*outline: green solid;*/
+ }
+ 
+ .appContent{
+   min-width: 410px;
+   min-height: 100%;
+   text-align: "center";
+   padding-left: 4px;
+   padding-bottom: 60px;
+   margin: 4px 1px;
+ }
+ 
+ .form, .users {
+   margin: 0px auto;
+   width: 50%;
+ }
+ 
+ .form {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   flex-direction: column;
+ }
+ 
+ .form > div {
+   margin-top: 10px;
+ }
+ .form button {
+   margin-top: 20px;
+   width: 100px;
+ }
+ 
+ #formSubmit{
+   color: rgb(18, 221, 18);
+ }
+ 
+ .flipContainer{
+   margin: 10px;
+   width: 100%;
+   height: 100%;
+   perspective: 1000px;
+ }
+ .card {
+   transition: transform 1s;
+   transform-style: preserve-3d;
+   cursor: pointer;
+   backface-visibility: visible;
+   backface-visibility: hidden;
+ }
+ 
+ .front, .back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   backface-visibility: visible;
+   backface-visibility: hidden;
+ }
+ 
+ .front {
+   border: 2px solid black;
+   background: rgb(105, 145, 100);
+   backface-visibility: visible;
+   backface-visibility: hidden;
+ }
+ 
+ .back {
+   border: 2px solid black;
+   background: rgb(158, 137, 98);
+   transform: rotateY(180deg);
+   backface-visibility: visible;
+   backface-visibility: hidden;
+ }
+ 
+ 
+ 
+ .article-list{
+   text-align: center;
+ }
+ 
+ .article-search{
+   margin: 10px;
+   padding: 0px;
+   min-width: 40%;
+   display: flex;
+   float: center;
+   flex-direction: row-reverse;
+ }
+ 
+ #list-search{
+   min-width: 65%;
+ }
+ 
+ .searchbox{
+   background-color: #ffffcc;
+   padding-left: 5px;
+   margin: 5px;
+   margin-top: 9px;
+   width: 45%;
+   height: 34px;
+   border-radius: 12px;
+   -webkit-transition: width 0.15s ease-in-out; 
+   transition: width 0.15s ease-in-out; 
+ } 
+ 
+ /* When the input field gets focus, 
+     change its width to 100% */
+ .searchbox:focus{
+   width: 75%;
+ } 
+ 
+ #listing, .cardy{
+   height: 100%;
+ }
+ 
+ 

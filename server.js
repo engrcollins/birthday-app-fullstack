@@ -6,7 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require("cors");
-var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:8000', 'https://birthday-app-fullstack.herokuapp.com'];
+var whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://localhost:8000', 'https://birthday-app-fullstack.herokuapp.com', 'https://colmig-app.herokuapp.com'];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -25,7 +25,7 @@ const log = console.log;
 const PORT = process.env.PORT || 8080; // Step 1
 
 
-// Step 2
+//  Step 2
 const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/birthday';
 mongoose.connect( uri, {
     useNewUrlParser: true
